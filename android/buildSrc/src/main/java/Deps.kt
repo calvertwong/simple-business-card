@@ -37,9 +37,7 @@ object Deps {
 
     object JetpackNavigation {
         private const val version = "2.3.0"
-        const val navigationFragment = "androidx.navigation:navigation-fragment:$version"
         const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
-        const val navigationUi = "androidx.navigation:navigation-ui:$version"
         const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:$version"
     }
 
