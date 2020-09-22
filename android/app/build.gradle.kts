@@ -24,8 +24,6 @@ dependencies {
     implementation(Deps.Lifecycle.lifecycleExtension)
 
     // Jetpack Navigation
-    implementation(Deps.JetpackNavigation.navigationFragment)
-    implementation(Deps.JetpackNavigation.navigationUi)
     implementation(Deps.JetpackNavigation.navigationFragmentKtx)
     implementation(Deps.JetpackNavigation.navigationUiKtx)
 
@@ -33,4 +31,6 @@ dependencies {
     testImplementation(Deps.Junit.junit)
     androidTestImplementation(Deps.ExtJunit.extJunit)
     androidTestImplementation(Deps.Espresso.espressoCore)
+
+    implementation(project(":navigation"))
 }
