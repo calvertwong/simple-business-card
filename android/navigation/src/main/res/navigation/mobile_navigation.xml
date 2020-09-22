@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidDomInspection -->
+
+<!-- Fragments are not referenced in this file and the fragment name should be in red.
+The reason they are not in red currently is because the errors are being suppressed by line 2.
+Although they are not referenced, by providing the correct package and file location will make
+this works. -->
+
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
