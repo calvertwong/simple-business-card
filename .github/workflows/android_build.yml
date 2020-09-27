@@ -25,7 +25,13 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Make gradlew executable
+        working-directory: android
+        run: chmod +x gradlew
+
       - name: Run test
+        if: ${{success()}}
+        working-directory: android
         run: ./gradlew test
 
       # Debug APK
