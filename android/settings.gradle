@@ -1,3 +1,0 @@
-include ':navigation'
-include ':app'
-rootProject.name = "SimpleBusinessCard"
