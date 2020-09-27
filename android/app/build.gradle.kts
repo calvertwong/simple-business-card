@@ -1,7 +1,8 @@
 android {
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -14,18 +15,33 @@ dependencies {
     implementation(Deps.AppCompat.appCompat)
     implementation(Deps.LegacySupport.legacySupport)
 
-    // Material
     implementation(Deps.Material.material)
 
-    // ConstraintLayout
     implementation(Deps.ConstraintLayout.constraintLayout)
 
-    // Lifecycle
     implementation(Deps.Lifecycle.lifecycleExtension)
 
-    // Jetpack Navigation
     implementation(Deps.JetpackNavigation.navigationFragmentKtx)
     implementation(Deps.JetpackNavigation.navigationUiKtx)
+
+    debugImplementation(Deps.DebugDrawer.debugDrawer)
+    implementation(Deps.DebugDrawer.debugDrawerBase)
+    implementation(Deps.DebugDrawer.debugDrawerActions)
+    implementation(Deps.DebugDrawer.debugDrawerCommons)
+    implementation(Deps.DebugDrawer.debugDrawerLogs)
+    releaseImplementation(Deps.DebugDrawer.debugDrawerNoOp)
+    implementation(Deps.DebugDrawer.debugDrawerOkhttp)
+    implementation(Deps.DebugDrawer.debugDrawerOkhttp3)
+    implementation(Deps.DebugDrawer.debugDrawerTimber)
+    
+    debugImplementation(Deps.Chuck.chuckLibrary)
+    releaseImplementation(Deps.Chuck.chuckLibraryNoOp)
+
+    implementation(Deps.Lynx.lynx)
+
+    implementation(Deps.Koin.koinAndroid)
+
+    implementation(Deps.OkHttp.okHttp)
 
     // Tests
     testImplementation(Deps.Junit.junit)
@@ -33,4 +49,5 @@ dependencies {
     androidTestImplementation(Deps.Espresso.espressoCore)
 
     implementation(project(":navigation"))
+    implementation(project(":core"))
 }

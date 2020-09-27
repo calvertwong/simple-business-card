@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     `kotlin-dsl`
+    id("java-gradle-plugin")
 }
 
 val viewBindingModules: List<String> = listOf(
@@ -24,8 +25,9 @@ buildscript {
         }
     }
     dependencies {
-        classpath(Deps.Kotlin.plugin)
+        classpath(Deps.Kotlin.kotlinGradlePlugin)
         classpath(Deps.BuildGradle.buildGradleTool)
+        classpath(Deps.Google.googleServices)
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -41,27 +43,28 @@ allprojects {
 
 subprojects {
     when (name) {
-        "app" -> configureApplication()
+        "app" -> configureApplication(name)
         else -> configureLibrary(name)
     }
     kotlinJvmTarget()
 }
 
-fun Project.configureApplication() {
+fun Project.configureApplication(name: String) {
     println("\nConfiguring Application")
     apply(plugin = "com.android.application")
-    configureCommon()
+//    apply(plugin = "com.google.gms.google-services")
+    configureCommon(name)
 }
 
 fun Project.configureLibrary(name: String) {
     println("\nConfiguring Library: $name")
     apply(plugin = "com.android.library")
-    configureCommon()
+    configureCommon(name)
     configureBuildTypesForLibrary()
 }
 
-fun Project.configureCommon() {
-    println("\nConfiguring Common")
+fun Project.configureCommon(name: String) {
+    println("\nConfiguring Common for $name")
     apply(plugin = "kotlin-android")
     apply(plugin = "kotlin-android-extensions")
     apply(plugin = "kotlin-kapt")
@@ -72,15 +75,23 @@ fun Project.configureCommon() {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
-        compileSdkVersion(29)
+        compileSdkVersion(30)
         defaultConfig {
-            multiDexEnabled = true
             minSdkVersion(21)
             targetSdkVersion(30)
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             version = "1"
             versionName = version.toString()
             versionCode = 1
+            vectorDrawables.useSupportLibrary = true
+
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = mapOf(
+
+                    )
+                }
+            }
         }
         packagingOptions {
             exclude("META-INF/DEPENDENCIES.txt")
