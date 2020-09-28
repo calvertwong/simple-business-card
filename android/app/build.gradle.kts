@@ -15,21 +15,23 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    signingConfigs {
-        register("release") {
-            keyAlias = keystoreProperties?.get("keyAlias") as String
-            keyPassword = keystoreProperties?.get("keyPassword") as String
-            storeFile = file(keystoreProperties?.get("storeFile") as String)
-            storePassword = keystoreProperties?.get("storePassword") as String
+    keystoreProperties?.let {
+        signingConfigs {
+            register("release") {
+                keyAlias = keystoreProperties?.get("keyAlias") as String
+                keyPassword = keystoreProperties?.get("keyPassword") as String
+                storeFile = file(keystoreProperties?.get("storeFile") as String)
+                storePassword = keystoreProperties?.get("storePassword") as String
+            }
         }
-    }
 
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            signingConfig = signingConfigs.getByName("release")
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        buildTypes {
+            getByName("release") {
+                isMinifyEnabled = true
+                isShrinkResources = true
+                signingConfig = signingConfigs.getByName("release")
+                proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            }
         }
     }
 }
