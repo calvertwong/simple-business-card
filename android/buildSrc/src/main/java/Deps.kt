@@ -39,11 +39,13 @@ object Deps {
         private const val version = "2.3.0"
         const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
         const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:$version"
+        const val navSafeArgsGradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
     }
 
     object Lifecycle {
         private const val version = "2.2.0"
         const val lifecycleExtension = "androidx.lifecycle:lifecycle-extensions:$version"
+        const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
     }
 
     object Koin {
@@ -124,16 +126,24 @@ object Deps {
         private const val services_version = "4.3.3"
         private const val analytics_version = "17.5.0"
         private const val auth_version = "19.4.0"
+        private const val services_auth = "18.1.0"
         private const val crashlytics_version = "17.2.1"
+
         const val googleServices = "com.google.gms:google-services:$services_version"
         const val analyticsKtx = "com.google.firebase:firebase-analytics-ktx:$analytics_version"
         const val authKtx = "com.google.firebase:firebase-auth-ktx:$auth_version"
+        const val servicesAuth = "com.google.android.gms:play-services-auth:$services_auth"
         const val crashlyticsKtx = "com.google.firebase:firebase-crashlytics-ktx:$crashlytics_version"
     }
 
     object Facebook {
         private const val version = "[5,6)"
         const val facebook = "com.facebook.android:facebook-login:$version"
+    }
+
+    object Flexbox {
+        private const val version = "2.0.1"
+        const val flexbox = "com.google.android:flexbox:$version"
     }
 
     object Timber {

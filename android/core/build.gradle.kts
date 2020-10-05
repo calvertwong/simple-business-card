@@ -21,6 +21,7 @@ dependencies {
     implementation(Deps.Coil.coil)
 
     implementation(Deps.JetpackNavigation.navigationFragmentKtx)
+    implementation(Deps.JetpackNavigation.navigationUiKtx)
 
     // Tests
     testImplementation(Deps.Junit.junit)

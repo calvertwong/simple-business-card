@@ -5,7 +5,7 @@ plugins {
 }
 
 val viewBindingModules: List<String> = listOf(
-    "app"
+    "app", "login", "home"
 )
 
 val dataBindingModules: List<String> = listOf(
@@ -28,7 +28,7 @@ buildscript {
         classpath(Deps.Kotlin.kotlinGradlePlugin)
         classpath(Deps.BuildGradle.buildGradleTool)
         classpath(Deps.Google.googleServices)
-
+        classpath(Deps.JetpackNavigation.navSafeArgsGradlePlugin)
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -52,7 +52,6 @@ subprojects {
 fun Project.configureApplication(name: String) {
     println("\nConfiguring Application")
     apply(plugin = "com.android.application")
-//    apply(plugin = "com.google.gms.google-services")
     configureCommon(name)
 }
 
@@ -69,6 +68,7 @@ fun Project.configureCommon(name: String) {
     apply(plugin = "kotlin-android-extensions")
     apply(plugin = "kotlin-kapt")
     apply(plugin = "org.jetbrains.kotlin.android")
+    apply(plugin = "androidx.navigation.safeargs")
 
     configure<com.android.build.gradle.BaseExtension> {
         compileOptions {
@@ -108,7 +108,7 @@ fun Project.configureCommon(name: String) {
         if (viewBindingModules.contains(name)) {
             buildFeatures.viewBinding = true
         }
-        if (viewBindingModules.contains(name)) {
+        if (dataBindingModules.contains(name)) {
             buildFeatures.dataBinding = true
         }
         testOptions {
