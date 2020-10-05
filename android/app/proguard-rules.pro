@@ -52,7 +52,6 @@
 -if interface * { @retrofit2.http.* <methods>; }
 -keep,allowobfuscation interface <1>
 
-
 ####### Retrofit rules end here ########
 
 ####### Coroutines rules start here ########

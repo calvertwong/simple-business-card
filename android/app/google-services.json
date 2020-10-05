@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "692263155791",
+    "firebase_url": "https://simplebusinesscard-56891.firebaseio.com",
+    "project_id": "simplebusinesscard-56891",
+    "storage_bucket": "simplebusinesscard-56891.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692263155791:android:a469cb945b34a3a832923a",
+        "android_client_info": {
+          "package_name": "com.calvertanddev.aa.simplebusinesscard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692263155791-bci86hdbq3dupt78ehv2k7eine12p93j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.calvertanddev.aa.simplebusinesscard",
+            "certificate_hash": "9fc3e395bbf285e0ccd56caa9e10edf1c8f6e0cf"
+          }
+        },
+        {
+          "client_id": "692263155791-n3keu78er3jkps020bgb62dci28lse7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.calvertanddev.aa.simplebusinesscard",
+            "certificate_hash": "2df34fb442b2ac507e97d05ed7cc64e060370f22"
+          }
+        },
+        {
+          "client_id": "692263155791-d99nek0bvs70rulipejrrumsnptnjmb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDztrpFgOB4Pw3uemdaiwdqMBgnplppZ9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692263155791-d99nek0bvs70rulipejrrumsnptnjmb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,11 @@
 import java.util.Properties
 import java.io.FileInputStream
 
+plugins {
+    id("com.google.gms.google-services")
+    id("kotlin-android")
+}
+
 // Create a variable called keystorePropertiesFile, and initialize it to your
 // keystore.properties file, in the rootProject folder.
 private val keystorePropertiesFile: File = rootProject.file("keystore.properties")
@@ -44,6 +49,11 @@ dependencies {
     implementation(Deps.AppCompat.appCompat)
     implementation(Deps.LegacySupport.legacySupport)
 
+    // Tests
+    testImplementation(Deps.Junit.junit)
+    androidTestImplementation(Deps.ExtJunit.extJunit)
+    androidTestImplementation(Deps.Espresso.espressoCore)
+
     implementation(Deps.Material.material)
 
     implementation(Deps.ConstraintLayout.constraintLayout)
@@ -72,11 +82,8 @@ dependencies {
 
     implementation(Deps.OkHttp.okHttp)
 
-    // Tests
-    testImplementation(Deps.Junit.junit)
-    androidTestImplementation(Deps.ExtJunit.extJunit)
-    androidTestImplementation(Deps.Espresso.espressoCore)
-
     implementation(project(":navigation"))
     implementation(project(":core"))
+    implementation(project(":login"))
+    implementation(project(":home"))
 }
